@@ -4,19 +4,25 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table("hiep")
+@Table(name = "hiep")
 public class Hiep {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private LocalDate tgbd;
-    private LocalDate tgkt;
-    private int ketqua;
 
     @ManyToOne
     @JoinColumn(name = "idtrandau")
     private TranDau tranDau;
+
+    @JoinColumn(name = "tgbd")
+    private LocalDate tgbd;
+
+    @JoinColumn(name = "tgkt")
+    private LocalDate tgkt;
+
+    @JoinColumn(name = "ketqua")
+    private int ketqua;
 
     public int getId() {
         return id;

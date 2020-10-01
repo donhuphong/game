@@ -1,19 +1,29 @@
 package com.momo.game.gameplay.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
-@Table("traudau")
+@Table(name = "trandau")
 public class TranDau {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @OneToOne
+    @JoinColumn(name = "iduser1")
     private User user1;
+
+    @OneToOne
+    @JoinColumn(name = "iduser2")
     private User user2;
 
-    @OneToMany
-    private Hiep hieps;
+    @OneToMany(mappedBy = "trandau")
+    private List<Hiep> hieps;
+
+    public TranDau(){
+
+    }
 
     public int getId() {
         return id;
@@ -39,11 +49,11 @@ public class TranDau {
         this.user2 = user2;
     }
 
-    public Hiep getHieps() {
+    public List<Hiep> getHieps() {
         return hieps;
     }
 
-    public void setHieps(Hiep hieps) {
+    public void setHieps(List<Hiep> hieps) {
         this.hieps = hieps;
     }
 }

@@ -1,60 +1,30 @@
 package com.momo.game.gameplay.model;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
+@Entity
+@Table(name = "status")
 public class Status {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private  int id;
-    private int hiep;
-    private  int stt;
+    private int id;
 
-    public int getId() {
-        return id;
-    }
+    @OneToOne
+    @JoinColumn(name = "iduser")
+    private User user;
 
-    public void setId(int id) {
-        this.id = id;
-    }
+    @OneToOne
+    @JoinColumn(name = "idhiep")
+    private Hiep hiep;
 
-    public int getIdHiep() {
-        return hiep;
-    }
+    @JoinColumn(name = "stt")
+    private int stt;
 
-    public void setIdHiep(int idHiep) {
-        this.hiep = idHiep;
-    }
-
-    public int getStt() {
-        return stt;
-    }
-
-    public void setStt(int stt) {
-        this.stt = stt;
-    }
-
-    public String getKey() {
-        return key;
-    }
-
-    public void setKey(String key) {
-        this.key = key;
-    }
-
-    public int getHashId() {
-        return hashId;
-    }
-
-    public void setHashId(int hashId) {
-        this.hashId = hashId;
-    }
-
+    @JoinColumn(name = "key")
     private String key;
+
+    @JoinColumn(name = "hashid")
     private int hashId;
-
-
-
 }

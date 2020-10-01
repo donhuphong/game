@@ -3,15 +3,26 @@ package com.momo.game.gameplay.model;
 import javax.persistence.*;
 
 @Entity
-@Table("user")
+@Table(name = "user")
 public class User {
 
     @Id
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "diem")
     private int diem;
+
+    @Column(name = "soluot")
     private int soluot;
+
+    public User(){
+
+    }
 
     public int getId() {
         return id;

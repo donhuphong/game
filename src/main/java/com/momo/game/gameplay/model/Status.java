@@ -27,4 +27,52 @@ public class Status {
 
     @JoinColumn(name = "hashid")
     private int hashId;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Hiep getHiep() {
+        return hiep;
+    }
+
+    public void setHiep(Hiep hiep) {
+        this.hiep = hiep;
+    }
+
+    public int getStt() {
+        return stt;
+    }
+
+    public void setStt(int stt) {
+        this.stt = stt;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    public int getHashId() {
+        return hashId;
+    }
+
+    public void setHashId(int hashId) {
+        this.hashId = hashId;
+    }
 }

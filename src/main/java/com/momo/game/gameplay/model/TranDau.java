@@ -18,7 +18,7 @@ public class TranDau {
     @JoinColumn(name = "iduser2")
     private User user2;
 
-    @OneToMany(mappedBy = "trandau")
+    @OneToMany(mappedBy = "tranDau")
     private List<Hiep> hieps;
 
     public TranDau(){

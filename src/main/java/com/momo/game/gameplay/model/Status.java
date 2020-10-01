@@ -19,12 +19,10 @@ public class Status {
     @JoinColumn(name = "idhiep")
     private Hiep hiep;
 
-    @JoinColumn(name = "stt")
+    @Column(name = "stt")
     private int stt;
 
-    @JoinColumn(name = "key")
+    @Column(name = "key")
     private String key;
 
-    @JoinColumn(name = "hashid")
-    private int hashId;
 }

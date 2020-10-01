@@ -15,13 +15,13 @@ public class Hiep {
     @JoinColumn(name = "idtrandau")
     private TranDau tranDau;
 
-    @JoinColumn(name = "tgbd")
+    @Column(name = "tgbd")
     private LocalDate tgbd;
 
-    @JoinColumn(name = "tgkt")
+    @Column(name = "tgkt")
     private LocalDate tgkt;
 
-    @JoinColumn(name = "ketqua")
+    @Column(name = "ketqua")
     private int ketqua;
 
     public int getId() {
